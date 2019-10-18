@@ -1,11 +1,3 @@
-/*
-Document   : affablebean
-Created on : Jun 9, 2010, 3:59:32 PM
-Author     : tgiunipero
-Description: Style rules for the AffableBean application
-*/
-
-
 /* html tags */
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -19,8 +11,6 @@ hr {
     border: 0;
     background-color: #333;
     height: 1px;
-    margin: 0 25px;
-    width: 300px;
 }
 
 table {
@@ -40,6 +30,12 @@ a:hover { text-decoration: none }
 a:visited { color: inherit }
 
 img { border: none }
+
+input, select { margin: 5px }
+
+li { margin: 10px 0 }
+
+label { line-height: 30px }
 
 
 /* general styles */
@@ -102,9 +98,24 @@ img { border: none }
     float: right;
 }
 
+#cart {
+    position: absolute;
+    margin: 5px 0 0 2px;
+}
+
+.horizontalMargin {
+    margin-left: 28px;
+    margin-right: 5px
+}
+
+#viewCart {
+    text-align: left;
+    width: 210px;
+}
+
 .headerWidget {
     width: 194px;
-    margin: 20px 2px;
+    margin: 20px 0;
     font-size: small;
     float: right;
     line-height: 25px;
@@ -119,6 +130,11 @@ img { border: none }
 }
 
 #footerText { margin-top: 5px }
+
+#footerDivider {
+    margin: 0 25px;
+    width: 300px;
+}
 
 
 /* index page styles */
@@ -236,24 +252,39 @@ img { border: none }
 
 /* checkout page styles */
 #checkoutTable {
-    width: 360px;
+    width: 405px;
+    padding: 10px;
     background-color: #f5eabe;
     float: left;
-    height: 280px;
 }
 
-#infoBox {
-    width: 300px;
-    padding-left: 30px;
-    float: left;
+#checkoutTable td {
+    vertical-align: top;
+    text-align: right;
+    margin: 5px;
 }
+
+.inputField { width: 190px }
+
+#infoBox { padding: 10px 25px 0 460px }
 
 #priceBox {
     padding: 10px;
-    margin: 10px 0;
-    height: 128px;
+    border: 1px solid #c3e3e0;
     background-color: #c3e3e0;
 }
+
+#priceBox td {
+    text-align: right;
+    padding: 5px;
+}
+
+.checkoutPriceColumn {
+    width: 80px;
+    font-weight: bold;
+}
+
+.total { border-top: 1px solid #444 }
 
 
 /* confirmation page styles */
@@ -262,7 +293,6 @@ img { border: none }
     padding: 10px;
     background-color: #f5eabe;
     float: left;
-    width:540px;
 }
 
 .summaryColumn {
@@ -271,15 +301,55 @@ img { border: none }
     float: left;
 }
 
-#orderSummaryTable {
-    width: 100%;
-    text-align: left;
-    height: 200px;
+.tableHeading {
+    font-weight: bold;
+    background-color: #edf8f7;
 }
+
+.detailsTable { text-align: left }
+
+.detailsTable th { padding: 5px 10px }
+
+.detailsTable td {
+    padding: 5px 10px 5px 20px;
+    font-size: small;
+    font-family: "Courier New", courier, monospace;
+}
+
+#orderSummaryTable { width: 100% }
 
 #deliveryAddressTable {
     width: 70%;
     margin-left: 15%;
-    text-align: left;
-    height: 200px;
 }
+
+#deliveryAddressTable td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.quantityColumn {
+    text-align: center;
+    width: 62px;
+}
+
+.confirmationPriceColumn {
+    width: 90px;
+    font-weight: normal;
+}
+
+#deliverySurchargeCellLeft {
+    text-align: right;
+    padding: 0;
+}
+
+#deliverySurchargeCellRight { padding: 0 20px }
+
+#totalCellLeft {
+    text-align: right;
+    padding: 0;
+}
+
+#totalCellRight { padding: 0 20px }
+
+#dateProcessedRow { padding: 2px 0 10px 20px }

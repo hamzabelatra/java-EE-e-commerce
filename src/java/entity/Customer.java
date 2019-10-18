@@ -79,7 +79,7 @@ public class Customer implements Serializable {
     @Size(min = 1, max = 19)
     @Column(name = "cc_number")
     private String ccNumber;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customerId")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
     private Collection<CustomerOrder> customerOrderCollection;
 
     public Customer() {

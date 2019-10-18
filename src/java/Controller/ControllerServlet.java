@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import session.CategoryFacade;
+import session.OrderManager;
 import session.ProductFacade;
 
 /**
@@ -42,6 +43,8 @@ private CategoryFacade categoryFacade;
 private String surcharge;
 @EJB
 private ProductFacade productFacade;
+@EJB
+private OrderManager orderManager;
 
 @Override
 public void  init(ServletConfig servletConfig) throws ServletException
@@ -153,7 +156,18 @@ public void  init(ServletConfig servletConfig) throws ServletException
                 }
                 if(userPath.equals("/purchase"))
                 {
-                    //implement purchase action 
+                  
+    if (cart != null) {
+
+        // extract user data from request
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        String cityRegion = request.getParameter("cityRegion");
+        String ccNumber = request.getParameter("creditcard");
+        int orderId = orderManager.placeOrder(name,email,phone,address,cityRegion,ccNumber,cart);
+    }
                     userPath="/confirmation";
                 }
                    String url="/WEB-INF/view"+ userPath + ".jsp";
