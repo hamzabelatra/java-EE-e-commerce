@@ -6,7 +6,6 @@
 package session;
 
 import entity.Customer;
-import entity.CustomerOrder;
 import cart.ShoppingCart;
 import cart.ShoppingCartItem;
 import entity.CustomerOrder;
@@ -20,6 +19,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import javax.annotation.Resource;
+import javax.ejb.EJB;
 import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -43,7 +43,13 @@ public class OrderManager {
 @Resource
 private SessionContext context;
 
-
+  
+    @EJB
+    private ProductFacade productFacade;
+    @EJB
+    private CustomerOrderFacade customerOrderFacade;
+    @EJB
+    private OrderedProductFacade orderedProductFacade;
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
 
         public int placeOrder(String name, String email, String phone, String address, String cityRegion, String ccNumber,ShoppingCart cart) {
