@@ -9,6 +9,10 @@
         <param-name>categoryimagePath</param-name>
         <param-value>img/categories/</param-value>
     </context-param>
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+        <param-value>resources.messages</param-value>
+    </context-param>
     <session-config>
         <session-timeout>
             30
@@ -39,13 +43,12 @@
         <param-name>JDBC_PASSWORD</param-name>
         <param-value>hamza</param-value>
     </context-param>
-       <context-param>
+    <context-param>
         <description>The delivery surcharge applied to all orders</description>
         <param-name>deliverySurcharge</param-name>
         <param-value>3.00</param-value>
     </context-param>
-
-<!--    <resource-ref>
+    <!--    <resource-ref>
         <res-ref-name>jdbc/affablebean</res-ref-name>
         <res-type>javax.sql.ConnectionPoolDataSource</res-type>
         <res-auth>Container</res-auth>

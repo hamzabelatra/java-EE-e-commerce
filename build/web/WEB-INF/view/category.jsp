@@ -1,6 +1,9 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
-
+<%-- Set session-scoped variable to track the view user is coming from.
+     This is used by the language mechanism in the Controller so that
+     users view the same page when switching between English and French. --%>
+<c:set var='view' value='/category' scope='session' />
 <%--<sql:query var="categories" dataSource="jdbc/affablebean">
     SELECT * from  category
 </sql:query>

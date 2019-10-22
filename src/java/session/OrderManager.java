@@ -13,6 +13,9 @@ import entity.OrderedProduct;
 import entity.OrderedProductPK;
 import entity.Product;
 import java.math.BigDecimal;
+import java.util.Date;  
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -86,6 +89,9 @@ private SessionContext context;
     CustomerOrder order = new CustomerOrder();
     order.setCustomer(customer);
     order.setAmount(BigDecimal.valueOf(cart.getTotal()));
+    long millis=System.currentTimeMillis();  
+    java.sql.Date date=new java.sql.Date(millis); 
+    order.setDateCreated(date);
 
     // create confirmation number
     Random random = new Random();
