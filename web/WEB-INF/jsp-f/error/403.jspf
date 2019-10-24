@@ -1,0 +1,9 @@
+<%--
+
+ * author: hamza
+--%>
+
+
+<p class="error">
+    <fmt:message key="forbidden"/>
+</p>
